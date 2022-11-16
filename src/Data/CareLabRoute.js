@@ -215,7 +215,7 @@ export const useCareLabRoute = () => {
     {
       icon: "icon-line-file",
       key: "marketanlaytic",
-      name: 'Marketing Analytic',
+      name: "Marketing Analytic",
       path: "/carddash",
       hasSubNav: false,
       showTab: true,
@@ -298,6 +298,13 @@ export const useCareLabRoute = () => {
       key: "addtable",
       name: "Billing",
       path: "/viewbill",
+      showTab: true,
+    },
+    {
+      icon: "icon-line2-doc",
+      key: "design",
+      name: "Design",
+      path: "/design",
       showTab: true,
     },
     // {

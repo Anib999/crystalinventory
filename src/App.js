@@ -100,6 +100,7 @@ import {
   AsyncViewBillingTable,
   AsyncPrintBillLayout,
   AsyncViewUpdateBill,
+  AsyncBillDesign,
 } from "./App/asyncComponent";
 import PublicRoute from "./Routes/PublicRoute";
 import { MenuSettings } from "./Data/MenuSettings";
@@ -1377,6 +1378,15 @@ function App() {
             component={AsyncPrintBillLayout}
             layout={AsyncAppLayout}
             forEdit
+          />
+
+          <PrivateRouter
+            exact
+            path="/design"
+            component={AsyncBillDesign}
+            layout={AsyncAppLayout}
+            forEdit
+            showSider
           />
 
           <Route component={AsyncNotFound} />

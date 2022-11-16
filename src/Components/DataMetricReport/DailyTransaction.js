@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import Filter from '../Common/Filter'
-import PageHeader from '../Common/pageHeader'
+import Filter from "../Common/Filter";
+import PageHeader from "../Common/pageHeader";
 import { getDailyTransactionReport } from "../../services/datametricService";
 import { Table, Tag } from "antd";
 import DataIsLoading from "../Common/IsLoading";
@@ -15,12 +15,12 @@ const DailyTransaction = () => {
 
   const tableHead = [
     {
-      title: 'Patient Info',
-      dataIndex: 'FirstName',
-      key: 'Name',
+      title: "Patient Info",
+      dataIndex: "FirstName",
+      key: "Name",
       render: (text, record) => {
-        let fullName = `${text} ${record.MiddleName} ${record.LastName}`
-        let ager = `(${record.Age})`
+        let fullName = `${text} ${record.MiddleName} ${record.LastName}`;
+        let ager = `(${record.Age})`;
         return (
           <>
             <div>{fullName},</div>
@@ -28,26 +28,30 @@ const DailyTransaction = () => {
             <div>{ager}</div>
             <div>{record.ContactNo}</div>
           </>
-        )
-      }
+        );
+      },
     },
     {
-      title: 'Bill No',
-      dataIndex: 'BillNo',
-      key: 'BillNo',
+      title: "Bill No",
+      dataIndex: "BillNo",
+      key: "BillNo",
     },
     {
-      title: 'Created On',
-      dataIndex: 'CreatedOn',
-      key: 'CreatedOn',
-      render: (text, record) => (
-        `${text.split('T')[0]} (${record.CreatedOnNepaliDate})`
-      )
+      title: "Sample Id",
+      dataIndex: "SampleId",
+      key: "SampleId",
     },
     {
-      title: 'Payment Details',
-      dataIndex: 'PaymentTYpe',
-      key: 'PaymentTYpe',
+      title: "Created On",
+      dataIndex: "CreatedOn",
+      key: "CreatedOn",
+      render: (text, record) =>
+        `${text.split("T")[0]} (${record.CreatedOnNepaliDate})`,
+    },
+    {
+      title: "Payment Details",
+      dataIndex: "PaymentTYpe",
+      key: "PaymentTYpe",
       render: (text, record) => {
         return (
           <>
@@ -55,92 +59,96 @@ const DailyTransaction = () => {
             Mode: {record.PaymentMOde} <br />
             Code: {record.PaymentCode}
           </>
-        )
-      }
+        );
+      },
     },
     {
-      title: 'Is Paid',
-      dataIndex: 'IsPaid',
-      key: 'IsPaid',
+      title: "Is Paid",
+      dataIndex: "IsPaid",
+      key: "IsPaid",
       render: (text) => {
-        let retText = 'Not Paid'
-        let retColor = 'red'
+        let retText = "Not Paid";
+        let retColor = "red";
         if (text === true) {
-          retText = 'Paid'
-          retColor = 'green'
+          retText = "Paid";
+          retColor = "green";
         }
-        return <Tag color={retColor}>{retText}</Tag>
-      }
+        return <Tag color={retColor}>{retText}</Tag>;
+      },
+    },
+
+    {
+      title: "User Name",
+      dataIndex: "usrFullName",
+      key: "usrFullName",
+    },
+
+    {
+      title: "Price",
+      dataIndex: "Price",
+      key: "Price",
     },
     {
-      title: 'Sample Id',
-      dataIndex: 'SampleId',
-      key: 'SampleId',
+      title: "Discount Amount",
+      dataIndex: "DiscountAmt",
+      key: "DiscountAmt",
     },
     {
-      title: 'Requestor',
-      dataIndex: 'Requestor',
-      key: 'Requestor',
+      title: "Total Price",
+      dataIndex: "TotalPrice",
+      key: "TotalPrice",
     },
     {
-      title: 'User Name',
-      dataIndex: 'usrFullName',
-      key: 'usrFullName',
+      title: "Remaining Amount",
+      dataIndex: "Rem.Amt",
+      key: "Rem.Amt",
     },
     {
-      title: 'Amount',
-      dataIndex: 'Amount',
-      key: 'Amount',
+      title: "Requestor",
+      dataIndex: "Requestor",
+      key: "Requestor",
     },
-    {
-      title: 'Remaining Amount',
-      dataIndex: 'RemainingAmount',
-      key: 'RemainingAmount',
-    },
-    {
-      title: 'Total Price',
-      dataIndex: 'TotalPrice',
-      key: 'TotalPrice',
-    },
-  ]
+  ];
 
   const getDataForReport = (data) => {
     setIsLoading(true);
-    dispatch(getDailyTransactionReport(data, (val) => {
-      settableData(val)
-      setNewTableData(val)
-      setIsLoading(false);
-    }))
-  }
+    dispatch(
+      getDailyTransactionReport(data, (val) => {
+        settableData(val);
+        setNewTableData(val);
+        setIsLoading(false);
+      })
+    );
+  };
 
   const dataRet = (val) => {
     let data = {
       ...val,
       fromdate: val[0].format("YYYY-MM-DD"),
       todate: val[1].format("YYYY-MM-DD"),
-    }
-    getDataForReport(data)
-    setfromToDate(data)
-  }
+    };
+    getDataForReport(data);
+    setfromToDate(data);
+  };
 
   const handleSearch = (val) => {
-    if (val === undefined || val === '') {
-      setNewTableData(tableData)
+    if (val === undefined || val === "") {
+      setNewTableData(tableData);
     } else {
-      setNewTableData(val)
+      setNewTableData(val);
     }
-  }
+  };
 
   return (
     <>
       <div className="maiTopContainer">
         <PageHeader
-          pageTitle='Daily Transaction Report'
-          csvLinkTitle='Export CSV'
+          pageTitle="Daily Transaction Report"
+          csvLinkTitle="Export CSV"
           csvData={newTableData}
-          csvDataName='dailyTransactionReport.csv'
+          csvDataName="dailyTransactionReport.csv"
           printFileName
-          reportName='Daily Transaction'
+          reportName="Daily Transaction"
           tableHead={tableHead}
           fromToDate={fromToDate}
         />
@@ -155,18 +163,21 @@ const DailyTransaction = () => {
           forDailyTrasection
         />
       </div>
-      {
-        IsLoading ? <DataIsLoading /> :
-        newTableData.length !== 0 ?
-          <div className="tableisRes">
-            <Table className='tableWidth'
-              columns={tableHead}
-              dataSource={newTableData}
-            />
-          </div> : ''
-      }
+      {IsLoading ? (
+        <DataIsLoading />
+      ) : newTableData.length !== 0 ? (
+        <div className="tableisRes">
+          <Table
+            className="tableWidth"
+            columns={tableHead}
+            dataSource={newTableData}
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </>
-  )
-}
+  );
+};
 
-export default DailyTransaction
+export default DailyTransaction;
