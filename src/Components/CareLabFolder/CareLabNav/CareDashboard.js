@@ -2,9 +2,9 @@ import { Col, Row } from "antd";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { inventoryStat } from "../../Common/StateList";
 import { settingsMenu } from "../../Data/MenuRoute";
 import { useCarelabReturn } from "./returnNewHook";
-import { inventoryStat } from "../../Common/StateList";
 const CarelabNavSettings = () => {
   const carelabNavData = useCareLabRoute();
   const dataNew = useCarelabReturn();

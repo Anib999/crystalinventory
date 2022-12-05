@@ -233,7 +233,7 @@ function ReportsFilter({ ...props }) {
                 <span className="labelTop">Date Range</span>
                 <Datepicker
                   className
-                  //   defaultValuer={fromDate}
+                    // defaultValuer={fromDate}
                   onChanger={(value) => {
                     setDateRanges(value);
                     setFromDate(value[0].format("YYYY-MM-DD"));
@@ -257,7 +257,7 @@ function ReportsFilter({ ...props }) {
                 <Col>
                   <NavLink
                     to={{
-                      pathname: `/viewProvience&DistrictWise/MainPage`,
+                      pathname: `/MainPage`,
                       state: carelabStat,
                     }}
                   >

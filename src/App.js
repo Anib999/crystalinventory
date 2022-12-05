@@ -1405,7 +1405,7 @@ function App() {
           {/* //charts dropdown menu */}
           <PrivateRouter
             exact
-            path="/viewProvience&DistrictWise/MainPage"
+            path="/MainPage"
             component={AsyncMainCharts}
             layout={AsyncAppLayout}
             // forEdit

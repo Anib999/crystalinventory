@@ -164,6 +164,7 @@ export const useCareLabRoute = () => {
       name: "Geographical Wise Report",
       path: "viewGeoGraphicalWise",
     },
+    
     // {
     //   icon: "icon-bars1",
     //   key: "viewAge&GenderWise",
@@ -339,13 +340,13 @@ export const useCareLabRoute = () => {
       path: "/print",
       showTab: false,
     },
-    {
-      icon: "icon-line2-doc",
-      key: "addtable",
-      name: "Billing",
-      path: "/viewbill",
-      showTab: false,
-    },
+    // {
+    //   icon: "icon-line2-doc",
+    //   key: "addtable",
+    //   name: "Billing",
+    //   path: "/viewbill",
+    //   showTab: true,
+    // },
     // {
     //   icon: "icon-line-calendar",
     //   key: "datedash",
