@@ -1,5 +1,4 @@
 export const printMembership = (cry, small, data, e) => {
-
   let newWindow = window.open();
   let newStyle = `
     <style>
@@ -53,25 +52,30 @@ export const printMembership = (cry, small, data, e) => {
       }
       
       #a {
+        margin-top:1mm;
         margin-right: 10mm;
         font-weight:bold
       
       }
       #c {
-      
+        margin-top:1mm;
+        margin-right:10mm;
         font-weight:bold
       }
       #d {
-      
+       margin-top:1mm;
+        margin-right:10mm;
         font-weight:bold
       }
       #e {
-      
+       margin-top:1mm;
+        margin-right:10mm;
         font-weight:bold
       }
       #f {
-      
-        font-weight:bold
+          margin-top:1mm;
+          margin-right:10mm;
+         font-weight:bold
       }
       .content-mid {
         margin-top: 4mm;
