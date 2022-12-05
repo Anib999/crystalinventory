@@ -198,6 +198,13 @@ export const useCareLabRoute = () => {
   ];
 
   const mainRoute = [
+    // datmetric dashboard
+    // {
+    //   icon: "icon-line2-home",
+    //   key: "datametricdash",
+    //   name: "Dashboard ",
+    //   path: "/datametricdash",
+    // },
     {
       icon: "icon-line-file",
       key: "samplestatus",
@@ -372,6 +379,12 @@ export const useCareLabRoute = () => {
       hasSubNav: true,
       subNavData: newReportsNav,
       showTab: true,
+    },
+    {
+      icon: "icon-line2-doc",
+      key: "datametricdash",
+      name: "View Bill ",
+      path: "/addbill",
     },
   ];
 
