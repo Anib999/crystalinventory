@@ -136,18 +136,18 @@ export const printMembership = (cry, small, data, e) => {
       <div class="heading noprint" >MEMBERSHIP CARD</div>
       <div class="content">
         <div class="content-top">
-          <p style="font-size: 3mm " id="c"><span class="noprint">Name:</span> <span>${data.Name}</span></p>
-          <p id="a" style="font-size: 3mm"><span class="noprint">Membership No.:</span> ${data.MemberCode}</p>
+          <p style="font-size: 3mm " id="c"><span class="noprint">Name:</span> <span style="margin-top:5mm;margin-left:2mm">${data.Name}</span></p>
+          <p id="a" style="font-size: 3mm"><span class="noprint">Membership No.:</span> <span style="margin-top:5mm;margin-left7mm">${data.MemberCode}</span></p>
         </div>
         <div class="content-mid" >
-          <p style="font-size: 3mm" id="d"><span class="noprint">Address:</span>${data.Address}</p>
-          <p id="b" style="font-size: 3mm" ><span class="noprint">Mobile No.:</span>${data.ContactNo}</p>
+          <p style="font-size: 3mm" id="d"><span class="noprint">Address:</span><span style="margin-top:5mm;margin-left:2mm">${data.Address}</span></p>
+          <p id="b" style="font-size: 3mm" ><span class="noprint">Mobile No.:</span><span style="margin-top:5mm;margin-left7mm"${data.ContactNo}></span></p>
         </div>
         <div class="content-sec">
-          <p style="font-size: 3mm" id="e"><span class="noprint">DOB:</span>${data.DateOfBirth}</p>
+          <p style="font-size: 3mm" id="e"><span class="noprint">DOB:</span><span style="margin-top:5mm;margin-left:2mm">${data.DateOfBirth}</span></p>
         </div>
         <div class="content-last" >
-          <p style="font-size: 3mm" id="f"><span class="noprint">Issue Date:</span>${e}</p>
+          <p style="font-size: 3mm" id="f"><span class="noprint">Issue Date:</span> <$ style="margin-top:5mm;margin-left:2mm">${e}</span></p>
         </div>
       </div>
     </div>`;
